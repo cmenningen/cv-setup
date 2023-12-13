@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+html {
+  font-family: "Courier New", Courier, monospace;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Helvetica", sans-serif;
+}
+
+.header {
+  padding: 32px 16px;
+  text-align: center;
+  background-color: bisque;
+}
+
+.main {
+  padding: 32px 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.nav-link {
+  padding: 4px 8px;
+  color: black;
+}
+
+.nav-link:hover {
+  color: whitesmoke;
+  background-color: lightseagreen;
+}
+
+.nav-link:active {
+  color: blueviolet;
+  background-color: whitesmoke;
+}
+
+article + article {
+  border-top: solid black;
+}
+
+::selection {
+  background-color: slateblue;
+  color: darkkhaki;
+}
+
+.profession::after {
+  content: "🤖";
+}
