@@ -55,3 +55,28 @@ article + article {
 .profession::after {
   content: "🤖";
 }
+
+.experience {
+  display: inline-block;
+}
+
+.experience-sub {
+  display: inline-block;
+}
+
+.heading-article {
+  position: relative;
+  left: -20px;
+}
+
+.hire-me {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  padding: 8px;
+  border-radius: 4px;
+  font: Verdana;
+  font-size: 12px;
+  background: midnightblue;
+  color: lightskyblue;
+}
