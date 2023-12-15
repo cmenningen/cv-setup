@@ -8,6 +8,7 @@ body {
 
 html {
   font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
 }
 
 h1,
@@ -17,14 +18,26 @@ h3 {
 }
 
 .header {
-  padding: 32px 16px;
+  padding: 2rem 1rem;
   text-align: center;
   background-color: bisque;
 }
 
+.name-header {
+  font-size: 3rem;
+}
+
+.name-header-h1 {
+  font-size: 1em;
+}
+
+.profession {
+  font-size: 0.25em;
+}
+
 .main {
-  padding: 32px 16px;
-  max-width: 800px;
+  padding: 2rem 1rem;
+  max-width: 75ch;
   margin: 0 auto;
 }
 
@@ -47,6 +60,12 @@ article + article {
   border-top: solid black;
 }
 
+@media screen and (min-width: 786px) {
+  article + article {
+    margin-top: 3rem;
+  }
+}
+
 ::selection {
   background-color: slateblue;
   color: darkkhaki;
@@ -62,6 +81,7 @@ article + article {
 
 .experience-sub {
   display: inline-block;
+  border: solid red;
 }
 
 .heading-article {
@@ -71,12 +91,41 @@ article + article {
 
 .hire-me {
   position: absolute;
+  height: 60px;
+  width: 60px;
   right: 16px;
   top: 16px;
-  padding: 8px;
-  border-radius: 4px;
+  padding: 10px;
+  border-radius: 50%;
   font: Verdana;
   font-size: 12px;
   background: midnightblue;
   color: lightskyblue;
+}
+
+@media screen and (min-width: 786px) {
+  html {
+    font-size: 110%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 130%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .hire-me {
+    position: fixed;
+  }
+}
+
+@media print {
+  .nav {
+    display: none;
+  }
+  .hire-me {
+    display: none;
+  }
 }
