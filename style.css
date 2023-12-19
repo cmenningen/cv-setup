@@ -3,7 +3,24 @@
 }
 
 body {
+  --background-color: beige;
+  --text-color: navy;
+  --header-color-1: bisque;
+  --header-color-2: skyblue;
+  --test-border: red;
+  --hover: lightseagreen;
+  --link-active-color: blueviolet;
+  --link-active-background: whitesmoke;
+  --page-background-color: white;
+  --page-text-color: black;
   margin: 0;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  body {
+    --page-background-color: black;
+    --page-text-color: white;
+  }
 }
 
 html {
@@ -20,8 +37,26 @@ h3 {
 .header {
   padding: 2rem 1rem;
   text-align: center;
-  background-color: bisque;
+  background-color: var(--header-color-1);
+  background-image: linear-gradient(
+    var(--header-color-2),
+    var(--header-color-1)
+  );
   position: relative;
+}
+
+.header-experience {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+@media screen and (min-width: 786px) {
+  .header-experience {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .name-header {
@@ -45,8 +80,9 @@ h3 {
 .nav-link {
   padding: 4px 8px;
   color: black;
-  border: dotted red;
+  _border: dotted var(--test-border);
   _align-items: center;
+  transition: background-color 0.5s;
 }
 
 .nav {
@@ -65,16 +101,22 @@ h3 {
 
 .nav-link:hover {
   color: whitesmoke;
-  background-color: lightseagreen;
+  background-color: var(--hover);
 }
 
 .nav-link:active {
-  color: blueviolet;
-  background-color: whitesmoke;
+  color: var(--link-active-color);
+  background-color: var(--link-active-background);
+}
+
+.nav-link:focus {
+  background-color: var(--background-color);
+  outline-color: var(--page-text-color);
+  outline-style: dotted;
 }
 
 article + article {
-  border-top: solid black;
+  border-top: solid var(--header-color-2);
 }
 
 @media screen and (min-width: 786px) {
@@ -98,7 +140,8 @@ article + article {
 
 .experience-sub {
   display: inline-block;
-  border: solid red;
+  border: solid var(--test-border);
+  margin-left: 1rem;
 }
 
 .heading-article {
@@ -108,16 +151,25 @@ article + article {
 
 .hire-me {
   position: absolute;
-  height: 60px;
-  width: 60px;
+  height: 30px;
+  width: 80px;
   right: 16px;
   top: 16px;
   padding: 10px;
-  border-radius: 50%;
+  border-radius: 4px;
   font: Verdana;
   font-size: 12px;
   background: midnightblue;
-  color: lightskyblue;
+  color: var(--header-color-2);
+}
+
+.hire-me {
+  transform-origin: 100% 0%;
+  transition: transform 1s;
+}
+
+.header:hover .hire-me {
+  transform: scale(2);
 }
 
 @media screen and (min-width: 786px) {
@@ -145,4 +197,18 @@ article + article {
   .hire-me {
     display: none;
   }
+}
+
+.footer {
+  _text-align: center;
+  margin-top: 3rem;
+  padding: 2rem;
+  background-image: linear-gradient(
+    var(--header-color-1),
+    var(--header-color-2)
+  );
+}
+
+.footer-inhalt {
+  text-align: center;
 }
